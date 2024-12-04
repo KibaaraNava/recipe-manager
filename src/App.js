@@ -5,18 +5,22 @@ import Home from './components/Home';
 import AddRecipe from './components/AddRecipe';
 import RecipeDetail from './components/RecipeDetail';
 import Recipes from './components/Recipes';
+import Profile from './components/Profile';  
+import Settings from './components/Settings'; 
 
 const App = () => {
   return (
     <Router>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
             Recipe Manager
           </Typography>
           <Button color="inherit" component={Link} to="/">Home</Button>
           <Button color="inherit" component={Link} to="/recipes">Recipes</Button>
           <Button color="inherit" component={Link} to="/add-recipe">Add Recipe</Button>
+          <Button color="inherit" component={Link} to="/profile">Profile</Button>
+          <Button color="inherit" component={Link} to="/settings">Settings</Button>
         </Toolbar>
       </AppBar>
       <Container>
@@ -26,6 +30,8 @@ const App = () => {
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/recipes/:id" element={<RecipeDetail />} />
             <Route path="/add-recipe" element={<AddRecipe />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </Box>
       </Container>
@@ -34,3 +40,4 @@ const App = () => {
 };
 
 export default App;
+
